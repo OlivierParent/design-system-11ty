@@ -1,0 +1,7 @@
+    <nav class="☠-navbar">
+      <ul>
+          {%- for collectionPage in collections.all %}
+          <li><a href="{{ collectionPage.url | url }}"{% if page.url == collectionPage.url %} aria-current="page"{% endif %}>{{ collectionPage.data.title }}</a></li>
+          {%- endfor %}
+      </ul>
+    </nav>

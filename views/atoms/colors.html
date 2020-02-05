@@ -1,2 +1,16 @@
 ---
+layout: default
+tags: atom
+title: Colors
+colors:
+  - red
+  - yellow
 ---
+<h1 class="☠-title">{{ title }}</h1 class="☠-title">
+
+{% for color in colors %}
+<div class="☠-color-swatch">
+    <div  style="background-color: {{ color }};"></div>
+    {{ color }}
+</div>
+{% endfor %}
