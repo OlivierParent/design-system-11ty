@@ -9,6 +9,6 @@ module.exports = function (eleventyConfig) {
       input: "views",
       output: "docs"
     },
-    pathPrefix: "/design-system/"
+    pathPrefix: "/design-system-11ty/"
   };
 };
