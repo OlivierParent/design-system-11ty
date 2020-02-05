@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System</title>
+</head>
+<body>
+    <nav>
+        <ul>
+        {% for page in collection.all %}
+            {{ page.title }} {{ page.url }}
+        {% endfor %}
+        </ul>
+    </nav>
+</body>
+</html>
