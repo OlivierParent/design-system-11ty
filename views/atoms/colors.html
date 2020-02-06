@@ -1,16 +1,23 @@
 ---
+eleventyNavigation:
+  key: Colors
+  order: 1
+  parent: Atoms
 layout: default
 tags: atom
-title: Colors
 colors:
   - red
   - yellow
 ---
-<h1 class="☠-title">{{ title }}</h1 class="☠-title">
+<h1 class="☠-heading ☠-heading--level-1">{{ eleventyNavigation.key }}</h1>
+
+<h2 class="☠-heading ☠-heading--level-2">Primary</h2>
 
 {% for color in colors %}
-<div class="☠-color-swatch">
-    <div  style="background-color: {{ color }};"></div>
-    {{ color }}
+<div class="☠-color">
+    <div class="☠-color__swatch" style="background-color: {{ color }}"></div>
+    <div class="☠-color__description">{{ color }}</div>
 </div>
 {% endfor %}
+
+<h2 class="☠-heading ☠-heading--level-2">Secondary</h2>
