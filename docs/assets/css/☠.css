@@ -15,13 +15,19 @@
     "sidebar sidebar sidebar main main"
     "sidebar sidebar sidebar main main"
     "sidebar sidebar sidebar main main"
-    "sidebar sidebar sidebar main main"
-    "sidebar sidebar sidebar main main"
-    "sidebar sidebar sidebar main main"
-    "sidebar sidebar sidebar main main"
+     "sidebar sidebar sidebar main main"
   ;
   grid-template-rows: var(--☠-margin) auto var(--☠-margin) auto var(--☠-margin) auto var(--☠-margin);
   grid-template-columns: var(--☠-margin) minmax(16rem, 1fr) var(--☠-margin) 3fr var(--☠-margin);
+}
+
+.☠-container::before {
+  background-color: hsl(0  0% 10%);
+  content: "";
+  display: block;
+  grid-column: 1 / 4;
+  grid-row: 1 / 8;
+  min-height: 100vh;
 }
 
 .☠-container--auto {
@@ -30,16 +36,15 @@
 }
 
 .☠-sidebar {
-  background-color: hsl(0, 0%, 10%);
   box-sizing: border-box;
   grid-area: sidebar;
-  min-height: 100vh;
   overflow-x: hidden;
   padding: 1rem;
 }
 
 .☠-sidebar [aria-current] {
   background-color: var(--☠-c-primary);
+  color: white !important;
 }
 
 .☠-sidebar ul {
@@ -50,7 +55,6 @@
 
 .☠-sidebar__title {
   border-bottom: 2px solid var(--☠-c-primary);
-  /* text-align: center; */
   text-indent: var(--☠-margin);
   text-transform: uppercase;
 }
@@ -60,6 +64,10 @@
   display: block;
   padding: .5em 0;
   text-decoration: none;
+}
+
+a.☠-sidebar__button:hover {
+  color: var(--☠-c-primary);
 }
 
 .☠-sidebar__list--level-0 {
@@ -89,13 +97,16 @@
 }
 
 .☠-footer {
+  align-self: end;
   background-color: var(--☠-c-primary);
   color: white;
   grid-area: 6 / 2 / 7 / 5;
-  padding: .75rem .5rem .5rem;
+  padding: .75rem 1rem .5rem;
+  text-align: right;
 }
 
 .☠-main {
+  grid-area: main;
   padding: 1rem;
 }
 
@@ -116,6 +127,10 @@
   text-transform: uppercase;
 }
 
+.☠-heading--level-1::after {
+  content: '.';
+}
+
 .☠-heading--level-2 {
   border-bottom: 2px solid var(--☠-c-primary);
   text-transform: uppercase;
@@ -125,7 +140,7 @@
 
 .☠-color {
   background-color: white;
-  box-shadow: .25rem .25rem 1rem rgb(0 0 0 / .3);
+  /* box-shadow: .25rem .25rem 1rem rgb(0 0 0 / .3); */
   display: inline-block;
   padding: 1rem;
   text-align: center;
@@ -137,6 +152,7 @@
   height: var(--size);
   margin: 1rem;
   width: var(--size);
+  border-radius: 50%;
 }
 
 .☠-nowrap {

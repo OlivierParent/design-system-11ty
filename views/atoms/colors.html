@@ -6,18 +6,35 @@ eleventyNavigation:
 layout: default
 tags: atom
 colors:
-  - red
-  - yellow
+  primary:
+    - hsl(0 100% 50%)
+    - hsl(120 100% 50%)
+    - hsl(240 100% 50%)
+  secondary:
+    - hsl(60 100% 50%)
+    - hsl(180 100% 50%)
+    - hsl(300 100% 50%)
 ---
 <h1 class="☠-heading ☠-heading--level-1">{{ eleventyNavigation.key }}</h1>
 
 <h2 class="☠-heading ☠-heading--level-2">Primary</h2>
 
-{% for color in colors %}
+<div>
+{% for color in colors.primary %}
 <div class="☠-color">
     <div class="☠-color__swatch" style="background-color: {{ color }}"></div>
     <div class="☠-color__description">{{ color }}</div>
 </div>
 {% endfor %}
+</div>
 
 <h2 class="☠-heading ☠-heading--level-2">Secondary</h2>
+
+<p>
+{% for color in colors.secondary %}
+<div class="☠-color">
+    <div class="☠-color__swatch" style="background-color: {{ color }}"></div>
+    <div class="☠-color__description">{{ color }}</div>
+</div>
+{% endfor %}
+</p>
