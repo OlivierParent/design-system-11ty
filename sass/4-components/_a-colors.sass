@@ -1,0 +1,8 @@
+@use '../1-abstracts/variables' as v
+@use 'sass:color'
+
+:root
+  @each $name, $value in v.$palette
+    --☠-a-color-#{$name}-200: #{color.scale($value, $lightness: 30%)}
+    --☠-a-color-#{$name}-500: #{$value}
+    --☠-a-color-#{$name}-700: #{color.scale($value, $lightness: -30%)}

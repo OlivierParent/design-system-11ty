@@ -7,6 +7,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addWatchTarget("./css/");
 
   return {
     dir: {
@@ -14,6 +15,7 @@ module.exports = function (eleventyConfig) {
       output: "docs"
     },
     htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
     pathPrefix: "/design-system-11ty/"
   };
 };

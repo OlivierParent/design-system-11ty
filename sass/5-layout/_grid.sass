@@ -1,0 +1,21 @@
+.☠-container
+  $margin: 1rem
+  display: grid
+  grid-template-areas: "sidebar sidebar sidebar main main" "sidebar sidebar sidebar main main" "sidebar sidebar sidebar main main" "sidebar sidebar sidebar main main"
+  grid-template-rows: $margin auto $margin auto $margin auto $margin
+  grid-template-columns: $margin minmax(16rem, 1fr) $margin 3fr $margin
+  &::before
+    background-color: hsl(0 0% 10%)
+    content: ""
+    display: block
+    grid-column: 1 / 4
+    grid-row: 1 / 8
+    min-height: 100vh
+
+.-☠-container-auto
+  margin: auto
+  max-width: 60rem
+
+.☠-main
+  grid-area: main
+  padding: 1rem

@@ -5,9 +5,11 @@
   "main": ".eleventy.js",
   "scripts": {
     "build:11ty": "npx @11ty/eleventy",
+    "build:sass": "npx sass sass:css scss:css",
     "build": "npm run build:11ty",
     "dev:11ty": "npx @11ty/eleventy --serve",
-    "dev": "npm run dev:11ty",
+    "dev:sass": "npx sass --watch sass:css scss:css",
+    "dev": "concurrently npm:dev:sass npm:dev:11ty",
     "start": "npm run dev"
   },
   "keywords": [],
@@ -15,6 +17,9 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
-    "@11ty/eleventy-navigation": "^0.1.4"
+    "@11ty/eleventy-navigation": "^0.1.4",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "concurrently": "^5.1.0",
+    "sass": "^1.25.0"
   }
 }

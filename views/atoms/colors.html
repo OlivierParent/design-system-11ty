@@ -15,26 +15,26 @@ colors:
     - hsl(180 100% 50%)
     - hsl(300 100% 50%)
 ---
-<h1 class="☠-heading ☠-heading--level-1">{{ eleventyNavigation.key }}</h1>
+<h1 class="☠-a-heading -☠-level-1">{{ eleventyNavigation.key }}</h1>
 
-<h2 class="☠-heading ☠-heading--level-2">Primary</h2>
+<h2 class="☠-a-heading -☠-level-2">Primary</h2>
 
 <div>
 {% for color in colors.primary %}
-<div class="☠-color">
-    <div class="☠-color__swatch" style="background-color: {{ color }}"></div>
-    <div class="☠-color__description">{{ color }}</div>
+<div class="☠-m-colorCard">
+    <div class="☠-m-colorCard_swatch" style="background-color: {{ color }}"></div>
+    <div class="☠-m-colorCard_description">{{ color }}</div>
 </div>
 {% endfor %}
 </div>
 
-<h2 class="☠-heading ☠-heading--level-2">Secondary</h2>
+<h2 class="☠-a-heading -☠-level-2">Secondary</h2>
 
 <p>
 {% for color in colors.secondary %}
-<div class="☠-color">
-    <div class="☠-color__swatch" style="background-color: {{ color }}"></div>
-    <div class="☠-color__description">{{ color }}</div>
+<div class="☠-m-colorCard">
+    <div class="☠-m-colorCard_swatch" style="background-color: {{ color }}"></div>
+    <div class="☠-m-colorCard_description">{{ color }}</div>
 </div>
 {% endfor %}
 </p>

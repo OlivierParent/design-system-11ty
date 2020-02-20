@@ -1,0 +1,44 @@
+@use '../1-abstracts/variables' as v
+@use 'sass:map'
+
+.☠-o-sidebar
+  $padding: 1rem
+  box-sizing: border-box
+  font-family: #{map.get(v.$fonts, 'body')}
+  grid-area: sidebar
+  overflow-x: hidden
+  padding: $padding
+  [aria-current]
+    background-color: var(--☠-a-color-primary-500)
+    color: white !important
+  a
+    color: white
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+  &_button
+    color: hsl(0, 0%, 50%)
+    display: block
+    padding: .5em 0
+    text-decoration: none
+    &:hover:not(span)
+      color: var(--☠-a-color-primary-500)
+  &_item
+    &.-☠-level-0
+      >.☠-o-sidebar_button
+        padding-left: $padding
+    &.-☠-level-1
+      >.☠-o-sidebar_button
+        padding-left: 2*$padding
+  &_list
+    &.-☠-level-0
+      font-size: 1.25rem
+      >.☠-o-sidebar_button
+        font-weight: bold
+    &.-☠-level-1
+      font-size: 1rem
+  &_title
+    border-bottom: 2px solid var(--☠-a-color-primary-500)
+    text-indent: $padding
+    text-transform: uppercase

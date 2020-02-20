@@ -1,0 +1,13 @@
+@use '../1-abstracts/variables' as v
+@use 'sass:map'
+
+.☠-body
+  margin: 0
+
+.☠-a,
+.☠-p,
+.☠-strong
+  font-family: #{map.get(v.$fonts, 'body')}
+
+.☠-a
+  color: map.get(v.$palette, 'primary')
