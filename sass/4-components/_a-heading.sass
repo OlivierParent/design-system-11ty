@@ -2,9 +2,9 @@
 @use 'sass:map'
 
 .☠-a-heading
-  font-family: #{map.get(v.$fonts, 'body')}
+  font-family: #{map.get(v.$fonts, 'heading')}
   &.-☠-level-1
-    box-shadow: inset 0 0 0 999px var(--☠-a-color-primary-500)
+    box-shadow: inset 0 0 0 999em map.get(v.$swatches, 'primary-500')
     color: white
     display: table
     height: 2rem
@@ -13,5 +13,5 @@
     &::after
       content: '.'
   &.-☠-level-2
-    border-bottom: 2px solid var(--☠-a-color-primary-500)
+    border-bottom: 2px solid map.get(v.$swatches, 'primary-500')
     text-transform: uppercase

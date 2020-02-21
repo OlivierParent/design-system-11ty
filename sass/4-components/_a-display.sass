@@ -1,0 +1,8 @@
+@use '../1-abstracts/variables' as v
+@use 'sass:map'
+
+.☠-a-display
+  font-family: map.get(v.$fonts, 'heading')
+  @for $i from 1 through 4
+    &.-☠-level-#{$i}
+      font-size: 1.25rem * 4 / $i

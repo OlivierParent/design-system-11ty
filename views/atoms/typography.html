@@ -8,17 +8,41 @@ tags: atom
 ---
 <h1 class="☠-a-heading -☠-level-1">{{ eleventyNavigation.key }}</h1>
 
-<h2 class="☠-a-heading -☠-level-2">Headings</h2>
+<h2 class="☠-a-heading -☠-level-2">Default Headings</h2>
 
 {% for i in range(1, 7) %}
-<h{{ i }}>h{{ i }} Lorem ipsum sid dolor amet</h{{ i}}>
+<h{{ i }}>Standard heading level {{ i }}</h{{ i}}>
 {% endfor%}
+
+{%- for i in range(1, 7) %}
+{%- highlight 'html' %}
+<h{{ i }}>Heading level {{ i }}</h{{ i}}>
+{%- endhighlight %}
+{%- endfor%}
+
+<h2 class="☠-a-heading -☠-level-2">Custom Headings</h2>
+
+{%- for i in range(1, 7) %}
+<h1 class="a-heading -level-{{ i }}">Custom heading level {{ i }}</h1>
+{%- endfor%}
+
+{%- for i in range(1, 7) %}
+{%- highlight 'html' %}
+<h{{ 7-i }} class="a-heading -level-{{ i }}">Custom heading level {{ i }}</h{{ 7-i }}>
+{%- endhighlight %}
+{%- endfor%}
 
 <h2 class="☠-a-heading -☠-level-2">Display Headings</h2>
 
-{% for i in range(1, 5) %}
-<h{{ i }} class="a-display -a-level-1">Lorem ipsum sid dolor amet</h{{ i}}>
-{% endfor%}
+{%- for i in range(1, 5) %}
+<h1 class="a-display -level-{{ i }}">Display heading level {{ i }}</h1>
+{%- endfor%}
+
+{%- for i in range(1, 5) %}
+{%- highlight 'html' %}
+<h1 class="a-display -level-{{ i }}">Display heading level {{ i }}</h1>
+{%- endhighlight %}
+{%- endfor%}
 
 <h2 class="☠-a-heading -☠-level-2">Paragraphs</h2>
 
@@ -26,4 +50,28 @@ tags: atom
 <p>Fusce pulvinar nunc lacinia enim malesuada, eu placerat nulla placerat. Vestibulum massa ex, ullamcorper et felis a, volutpat tempor dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat. Etiam eu vulputate enim. Nulla cursus ex non dolor auctor gravida. Duis nec ex pulvinar, ultricies dolor quis, imperdiet ligula. Fusce et finibus nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin non iaculis sem, id placerat urna. Aliquam euismod ac sapien eu finibus. Ut scelerisque sed ligula non luctus.</p>
 <p>Aliquam eu tristique arcu. Sed in nibh faucibus, sagittis nisi eu, vestibulum orci. Nam et massa ac nisl gravida dictum. Praesent velit orci, tincidunt at turpis a, volutpat scelerisque magna. Phasellus viverra purus libero, dignissim iaculis nibh tempor quis. Integer porta felis tortor, non dapibus lacus sagittis a. Vestibulum eleifend turpis nisl, in vehicula felis tempus eu.</p>
 <p>Sed sit amet sodales ante. Vivamus sed justo porta lacus tristique molestie. Nullam gravida maximus sagittis. Duis id leo ullamcorper, malesuada dolor id, rutrum erat. Curabitur sed nibh et tortor tristique facilisis nec a turpis. Quisque facilisis libero id libero hendrerit, nec feugiat ex luctus. Vestibulum quis iaculis felis. Proin aliquet tempor augue, id accumsan metus bibendum eget. Etiam vitae molestie ipsum.</p>
+<p>Nullam eu pulvinar ipsum. In sit amet sodales nibh. Mauris mattis nec massa a blandit. Suspendisse et rhoncus dolor. Proin sit amet mi et quam aliquet malesuada. Quisque nec ante sed diam imperdiet ultricies. Maecenas imperdiet iaculis sodales. Aliquam erat volutpat. Aliquam id felis gravida, dictum sem id, porta neque. Mauris vestibulum eget erat eu commodo. Vivamus quis efficitur eros, et feugiat est. Nunc molestie pulvinar ante, vitae vehicula ligula sollicitudin at. Maecenas ultricies ipsum at dui consequat, id vulputate enim elementum. Phasellus a tincidunt est. Etiam malesuada, est id imperdiet bibendum, tortor enim sodales est, sit amet posuere sapien purus a 
+<p>You can use the mark tag to <mark>highlight</mark> text.</p>
+<p><del>This line of text is meant to be treated as deleted text.</del></p>
+<p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+<p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+<p><u>This line of text will render as underlined</u></p>
+<p><small>This line of text is meant to be treated as fine print.</small></p>
+<p><strong>This line rendered as bold text.</strong></p>
+<p><em>This line rendered as italicized text.</em></p>
+
+{%- highlight 'html' %}
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida convallis erat, non auctor purus tristique nec. Phasellus convallis quam quis nisl consequat dapibus. Maecenas lacus ligula, gravida ut interdum vitae, pharetra at mauris. Pellentesque cursus nisi et ante ultricies, a dictum lacus euismod. Proin porttitor, felis eget pharetra facilisis, orci odio convallis ante, sit amet sollicitudin orci elit nec arcu. Curabitur sed neque ac ex tempor venenatis. Sed odio dolor, dapibus in sodales in, euismod a dui. Sed eu magna rutrum lorem lacinia porttitor quis sed nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed condimentum erat id eleifend sodales. Nulla dictum urna sit amet nisl egestas, vitae venenatis neque porta.</p>
+<p>Fusce pulvinar nunc lacinia enim malesuada, eu placerat nulla placerat. Vestibulum massa ex, ullamcorper et felis a, volutpat tempor dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat. Etiam eu vulputate enim. Nulla cursus ex non dolor auctor gravida. Duis nec ex pulvinar, ultricies dolor quis, imperdiet ligula. Fusce et finibus nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin non iaculis sem, id placerat urna. Aliquam euismod ac sapien eu finibus. Ut scelerisque sed ligula non luctus.</p>
+<p>Aliquam eu tristique arcu. Sed in nibh faucibus, sagittis nisi eu, vestibulum orci. Nam et massa ac nisl gravida dictum. Praesent velit orci, tincidunt at turpis a, volutpat scelerisque magna. Phasellus viverra purus libero, dignissim iaculis nibh tempor quis. Integer porta felis tortor, non dapibus lacus sagittis a. Vestibulum eleifend turpis nisl, in vehicula felis tempus eu.</p>
+<p>Sed sit amet sodales ante. Vivamus sed justo porta lacus tristique molestie. Nullam gravida maximus sagittis. Duis id leo ullamcorper, malesuada dolor id, rutrum erat. Curabitur sed nibh et tortor tristique facilisis nec a turpis. Quisque facilisis libero id libero hendrerit, nec feugiat ex luctus. Vestibulum quis iaculis felis. Proin aliquet tempor augue, id accumsan metus bibendum eget. Etiam vitae molestie ipsum.</p>
 <p>Nullam eu pulvinar ipsum. In sit amet sodales nibh. Mauris mattis nec massa a blandit. Suspendisse et rhoncus dolor. Proin sit amet mi et quam aliquet malesuada. Quisque nec ante sed diam imperdiet ultricies. Maecenas imperdiet iaculis sodales. Aliquam erat volutpat. Aliquam id felis gravida, dictum sem id, porta neque. Mauris vestibulum eget erat eu commodo. Vivamus quis efficitur eros, et feugiat est. Nunc molestie pulvinar ante, vitae vehicula ligula sollicitudin at. Maecenas ultricies ipsum at dui consequat, id vulputate enim elementum. Phasellus a tincidunt est. Etiam malesuada, est id imperdiet bibendum, tortor enim sodales est, sit amet posuere sapien purus a nunc. Vestibulum lectus libero, fringilla id magna aliquam, malesuada ultricies libero.</p>
+<p>You can use the mark tag to <mark>highlight</mark> text.</p>
+<p><del>This line of text is meant to be treated as deleted text.</del></p>
+<p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+<p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+<p><u>This line of text will render as underlined</u></p>
+<p><small>This line of text is meant to be treated as fine print.</small></p>
+<p><strong>This line rendered as bold text.</strong></p>
+<p><em>This line rendered as italicized text.</em></p>
+{%- endhighlight %}

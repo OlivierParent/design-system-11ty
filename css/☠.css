@@ -1,5 +1,7 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Courier+Prime&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Courier+Prime&display=block");
+@import url("https://fonts.googleapis.com/css?family=Gochi+Hand&display=block");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism-tomorrow.min.css");
 .☠-body {
   margin: 0;
 }
@@ -7,7 +9,7 @@
 .☠-a,
 .☠-p,
 .☠-strong {
-  font-family: 'Courier Prime', monospace;
+  font-family: "Courier Prime", monospace;
 }
 
 .☠-a {
@@ -19,22 +21,65 @@
 }
 
 :root {
-  --☠-a-color-primary-200: #6d51fb;
-  --☠-a-color-primary-500: #2f06f9;
-  --☠-a-color-primary-700: #2104ae;
-  --☠-a-color-secondary-200: #51fb51;
-  --☠-a-color-secondary-500: #06f906;
-  --☠-a-color-secondary-700: #04ae04;
-  --☠-a-color-accent-200: #6d51fb;
-  --☠-a-color-accent-500: #2f06f9;
-  --☠-a-color-accent-700: #2104ae;
+  --☠-a-colorPrimary-100: #826afb;
+  --☠-a-colorPrimary-200: #785dfb;
+  --☠-a-colorPrimary-300: #6d51fb;
+  --☠-a-colorPrimary-400: #5838fa;
+  --☠-a-colorPrimary-500: #2f06f9;
+  --☠-a-colorPrimary-600: #2505c7;
+  --☠-a-colorPrimary-700: #2104ae;
+  --☠-a-colorPrimary-800: #1e04a2;
+  --☠-a-colorPrimary-900: #1c0495;
+  --☠-a-colorSecondary-100: #6afb6a;
+  --☠-a-colorSecondary-200: #5dfb5d;
+  --☠-a-colorSecondary-300: #51fb51;
+  --☠-a-colorSecondary-400: #38fa38;
+  --☠-a-colorSecondary-500: #06f906;
+  --☠-a-colorSecondary-600: #05c705;
+  --☠-a-colorSecondary-700: #04ae04;
+  --☠-a-colorSecondary-800: #04a204;
+  --☠-a-colorSecondary-900: #049504;
+  --☠-a-colorAccent-100: #fb6a6a;
+  --☠-a-colorAccent-200: #fb5d5d;
+  --☠-a-colorAccent-300: #fb5151;
+  --☠-a-colorAccent-400: #fa3838;
+  --☠-a-colorAccent-500: #f90606;
+  --☠-a-colorAccent-600: #c70505;
+  --☠-a-colorAccent-700: #ae0404;
+  --☠-a-colorAccent-800: #a20404;
+  --☠-a-colorAccent-900: #950404;
+  --☠-a-colorNeutral-100: #858585;
+  --☠-a-colorNeutral-200: #7a7a7a;
+  --☠-a-colorNeutral-300: #707070;
+  --☠-a-colorNeutral-400: #5c5c5c;
+  --☠-a-colorNeutral-500: #333333;
+  --☠-a-colorNeutral-600: #292929;
+  --☠-a-colorNeutral-700: #242424;
+  --☠-a-colorNeutral-800: #212121;
+  --☠-a-colorNeutral-900: #1f1f1f;
+}
+
+.☠-a-display {
+  font-family: '"Courier Prime", monospace';
+}
+.☠-a-display.-☠-level-1 {
+  font-size: 5rem;
+}
+.☠-a-display.-☠-level-2 {
+  font-size: 2.5rem;
+}
+.☠-a-display.-☠-level-3 {
+  font-size: 1.6666666667rem;
+}
+.☠-a-display.-☠-level-4 {
+  font-size: 1.25rem;
 }
 
 .☠-a-heading {
-  font-family: 'Courier Prime', monospace;
+  font-family: "Courier Prime", monospace;
 }
 .☠-a-heading.-☠-level-1 {
-  box-shadow: inset 0 0 0 999px var(--☠-a-color-primary-500);
+  box-shadow: inset 0 0 0 999em #2f06f9;
   color: white;
   display: table;
   height: 2rem;
@@ -45,27 +90,35 @@
   content: ".";
 }
 .☠-a-heading.-☠-level-2 {
-  border-bottom: 2px solid var(--☠-a-color-primary-500);
+  border-bottom: 2px solid #2f06f9;
   text-transform: uppercase;
 }
 
-.☠-m-colorCard {
-  background-color: white;
+.☠-m-colorSwatch {
+  background-color: #dedede;
+  border-radius: 0.5em;
   display: inline-block;
-  padding: 1rem;
+  font-family: "Courier Prime", monospace;
+  min-width: 20rem;
+  overflow: hidden;
   text-align: center;
 }
-.☠-m-colorCard_swatch {
-  border-radius: 50%;
-  display: block;
+.☠-m-colorSwatch_swatch {
   height: 10rem;
-  margin: 1rem;
-  width: 10rem;
+}
+.☠-m-colorSwatch_body {
+  padding: 1rem;
+}
+.☠-m-colorSwatch_body > pre {
+  margin: 0 -1rem;
+}
+.☠-m-colorSwatch_body > pre > code {
+  font-family: "Courier Prime", monospace;
 }
 
 .☠-o-footer {
   align-self: end;
-  background-color: var(--☠-a-color-primary-500);
+  background-color: #2f06f9;
   color: white;
   grid-area: 6/2/7/5;
   padding: 0.75rem 1rem 0.5rem;
@@ -77,14 +130,14 @@
 
 .☠-o-sidebar {
   box-sizing: border-box;
-  font-family: 'Courier Prime', monospace;
+  font-family: "Courier Prime", monospace;
   grid-area: sidebar;
   overflow-x: hidden;
   padding: 1rem;
 }
-.☠-o-sidebar [aria-current] {
-  background-color: var(--☠-a-color-primary-500);
-  color: white !important;
+.☠-o-sidebar a[aria-current]:not(span) {
+  background-color: #2f06f9;
+  color: white;
 }
 .☠-o-sidebar a {
   color: white;
@@ -101,7 +154,7 @@
   text-decoration: none;
 }
 .☠-o-sidebar_button:hover:not(span) {
-  color: var(--☠-a-color-primary-500);
+  color: #6d51fb;
 }
 .☠-o-sidebar_item.-☠-level-0 > .☠-o-sidebar_button {
   padding-left: 1rem;
@@ -119,7 +172,9 @@
   font-size: 1rem;
 }
 .☠-o-sidebar_title {
-  border-bottom: 2px solid var(--☠-a-color-primary-500);
+  font-family: inherit;
+  font-size: 2rem;
+  border-bottom: 2px solid #2f06f9;
   text-indent: 1rem;
   text-transform: uppercase;
 }

@@ -1,8 +1,8 @@
 @use '../1-abstracts/variables' as v
 @use 'sass:color'
+@use 'sass:string'
 
 :root
-  @each $name, $value in v.$palette
-    --☠-a-color-#{$name}-200: #{color.scale($value, $lightness: 30%)}
-    --☠-a-color-#{$name}-500: #{$value}
-    --☠-a-color-#{$name}-700: #{color.scale($value, $lightness: -30%)}
+  @each $name, $value in v.$swatches
+    $color-name: string.to-upper-case(string.slice($name, 0, 1)) + string.slice($name, 2)
+    --☠-a-color#{$color-name}: #{$value}

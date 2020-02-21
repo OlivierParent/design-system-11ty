@@ -1,0 +1,20 @@
+@use '../1-abstracts/variables' as v
+@use 'sass:map'
+
+.☠-m-colorSwatch
+  $size: 10rem
+  background-color: rgb(222, 222, 222)
+  border-radius: .5em
+  display: inline-block
+  font-family: #{map.get(v.$fonts, 'body')}
+  min-width: $size*2
+  overflow: hidden
+  text-align: center
+  &_swatch
+    height: $size
+  &_body
+    padding: 1rem
+    > pre
+      margin: 0 -1rem
+      > code
+        font-family: #{map.get(v.$fonts, 'code')}

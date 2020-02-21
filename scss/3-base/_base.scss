@@ -1,0 +1,11 @@
+@use '../1-abstracts/variables' as v;
+@use 'sass:list';
+@use 'sass:map';
+
+@for $i from 1 through 6 {
+  $sizes: 2.5rem, 2rem, 1.75rem, 1.5rem, 1.25rem, 1rem;
+  h#{$i} {
+    font-family: #{map.get(v.$fonts, 'heading')};
+    font-size: list.nth($sizes, $i);
+  }
+}
