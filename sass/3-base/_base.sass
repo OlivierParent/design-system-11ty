@@ -10,4 +10,6 @@
   font-family: #{map.get(v.$fonts, 'body')}
 
 .☠-a
-  color: map.get(v.$palette, 'primary')
+  color: map.get(v.$swatches, 'primary-500')
+  &:hover
+    color: map.get(v.$swatches, 'accent-500')

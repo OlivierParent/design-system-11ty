@@ -6,47 +6,37 @@ eleventyNavigation:
 layout: default
 tags: atom
 colors:
-  primary:
-    - code: hsl(0 100% 50%)
-      name: Red
-    - code: hsl(120 100% 50%)
-      name: Green
-    - code: hsl(240 100% 50%)
-      name: Blue
-  secondary:
-    - code: hsl(60 100% 50%)
-      name: Yellow
-    - code: hsl(180 100% 50%)
-      name: Cyan
-    - code: hsl(300 100% 50%)
-      name: Magenta
+  - primary
+  - secondary
+  - accent
+  - neutral
+  - info
+  - warning
+  - danger
+  - success
 ---
 <h1 class="☠-a-heading -☠-level-1">{{ eleventyNavigation.key }}</h1>
-{%- macro colorSwatch(color) %}
+{%- macro colorSwatches(color) %}
+{%- for swatch in [500, 100,200,300,400,500,600,700,800,900] %}
+{% set class = '-a-color' + (color | capitalize) + '-' + swatch %}
 <div class="☠-m-colorSwatch">
-    <div class="☠-m-colorSwatch_swatch" style="background-color: {{ color.code }}"></div>
+    <div class="☠-m-colorSwatch_swatch {{ class }}" style="background-color: var(--color)"></div>
     <div class="☠-m-colorSwatch_head">
-      <div class="☠-a-display -☠-level-1">{{ color.name }}</div>
+      <div class="☠-a-display -☠-level-4">{{ color }} {{ swatch }}</div>
     </div>
     <div class="☠-m-colorSwatch_body">
-      {% highlight 'html' %}
-      <p>lorem ipsum</p>
+      {% highlight 'css' %}
+      class="{{ class }}"
       {% endhighlight%}
       <p>{{ color.code }}</p>
     </div>
 </div>
+{%- endfor %}
 {%- endmacro %}
 
-<h2 class="☠-a-heading -☠-level-2">Primary</h2>
+{%- for color in colors %}
+<h2 class="☠-a-heading -☠-level-2">{{ color }}</h2>
 <div class="☠-m-colorContainer">
-{%- for color in colors.primary %}
-{{ colorSwatch(color) }}
-{%- endfor %}
+{{ colorSwatches(color) }}
 </div>
-
-<h2 class="☠-a-heading -☠-level-2">Secondary</h2>
-<div class="☠-m-colorSwatches">
-{%- for color in colors.secondary %}
-{{ colorSwatch(color) }}
 {%- endfor %}
-</div>

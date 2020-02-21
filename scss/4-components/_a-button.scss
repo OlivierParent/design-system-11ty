@@ -1,0 +1,26 @@
+.a-button {
+  --color: #ddd;
+  background-color: var(--color);
+  border: 1px solid var(--color);
+  border-radius: .25em;
+  font-size: 1em;
+  padding: .5em 1em;
+ 
+  &-state {
+    &Active {
+
+    }
+    &Disabled {
+      
+    }
+    &Hover {
+
+    }
+  }
+  &-type {
+    &Ghost {
+      background-color: transparent;
+      color: var(--color);
+    }
+  }
+}

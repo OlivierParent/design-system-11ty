@@ -2,7 +2,7 @@
 @use 'sass:map'
 
 .☠-a-display
-  font-family: map.get(v.$fonts, 'heading')
+  font-family: #{map.get(v.$fonts, 'heading')}
   @for $i from 1 through 4
     &.-☠-level-#{$i}
       font-size: 1.25rem * 4 / $i

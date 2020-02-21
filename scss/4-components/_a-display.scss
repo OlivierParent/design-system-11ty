@@ -5,7 +5,8 @@
 .a-display {
   $sizes: 6rem, 5.5rem, 4.5rem, 3.5rem;
   font-family: #{map.get(v.$fonts, 'heading')};
-  @for $i from 1 through 4 {
+  font-weight: 300;
+  @for $i from 1 through list.length($sizes) {
     &.-level-#{$i} {
       font-size: list.nth($sizes, $i);
     }
