@@ -6,14 +6,26 @@
   $sizes: 2.5rem, 2rem, 1.75rem, 1.5rem, 1.25rem, 1rem
   font-family: #{map.get(v.$fonts, 'heading')}
   &.-☠-level-1
-    box-shadow: inset 0 0 0 999em map.get(v.$swatches, 'primary-500')
     color: white
     display: table
     height: 2rem
     padding: .25rem .5rem 0
+    position: relative
     text-transform: uppercase
     &::after
       content: '.'
+    &::before
+      filter: drop-shadow(4px 4px 8px map.get(v.$swatches, 'primary-900'))
+      background: transparent
+      bottom: 0
+      box-shadow: inset 0 0 0 999em map.get(v.$swatches, 'primary-500')
+      content: ''
+      left: 0
+      position: absolute
+      right: 0
+      top: 0
+      transform: rotate(-1deg)
+      z-index: -1
   &.-☠-level-2
     border-bottom: 2px solid map.get(v.$swatches, 'primary-500')
     text-transform: uppercase

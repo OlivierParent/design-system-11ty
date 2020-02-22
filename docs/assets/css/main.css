@@ -415,16 +415,16 @@ h6 {
   font-weight: 300;
 }
 .a-display.-level-1 {
-  font-size: 6rem;
+  font-size: 4.25rem;
 }
 .a-display.-level-2 {
-  font-size: 5.5rem;
+  font-size: 3.125rem;
 }
 .a-display.-level-3 {
-  font-size: 4.5rem;
+  font-size: 2.5rem;
 }
 .a-display.-level-4 {
-  font-size: 3.5rem;
+  font-size: 1.75rem;
 }
 
 .a-heading {
@@ -432,13 +432,13 @@ h6 {
   font-weight: 300;
 }
 .a-heading.-level-1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 .a-heading.-level-2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 .a-heading.-level-3 {
-  font-size: 1.75rem;
+  font-size: 2rem;
 }
 .a-heading.-level-4 {
   font-size: 1.5rem;

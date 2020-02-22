@@ -66,31 +66,44 @@
   font-family: "Courier Prime", monospace;
 }
 .☠-a-display.-☠-level-1 {
-  font-size: 5rem;
+  font-size: 4.25rem;
 }
 .☠-a-display.-☠-level-2 {
-  font-size: 2.5rem;
+  font-size: 3.125rem;
 }
 .☠-a-display.-☠-level-3 {
-  font-size: 1.6666666667rem;
+  font-size: 2.5rem;
 }
 .☠-a-display.-☠-level-4 {
-  font-size: 1.25rem;
+  font-size: 1.75rem;
 }
 
 .☠-a-heading {
   font-family: "Courier Prime", monospace;
 }
 .☠-a-heading.-☠-level-1 {
-  box-shadow: inset 0 0 0 999em #0652dd;
   color: white;
   display: table;
   height: 2rem;
   padding: 0.25rem 0.5rem 0;
+  position: relative;
   text-transform: uppercase;
 }
 .☠-a-heading.-☠-level-1::after {
   content: ".";
+}
+.☠-a-heading.-☠-level-1::before {
+  filter: drop-shadow(4px 4px 8px #043185);
+  background: transparent;
+  bottom: 0;
+  box-shadow: inset 0 0 0 999em #0652dd;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: rotate(-1deg);
+  z-index: -1;
 }
 .☠-a-heading.-☠-level-2 {
   border-bottom: 2px solid #0652dd;
@@ -116,31 +129,34 @@
 }
 
 .☠-m-colorSwatch {
-  background-color: #dedede;
+  background-color: #e6e6e6;
   border-radius: 0.5em;
-  display: inline-block;
+  display: grid;
   font-family: "Courier Prime", monospace;
-  min-width: 20rem;
+  grid-template-columns: 20rem auto;
+  grid-template-rows: repeat(2, auto);
   overflow: hidden;
-  text-align: center;
 }
-.☠-m-colorSwatch_swatch {
-  height: 10rem;
-}
-.☠-m-colorSwatch_body {
-  padding: 1rem;
+.☠-m-colorSwatch + .☠-m-colorSwatch {
+  margin-top: 1rem;
 }
 .☠-m-colorSwatch_body > pre {
-  margin: 0 -1rem;
+  margin: 0 0 0 1rem;
 }
-.☠-m-colorSwatch_body > pre > code {
-  font-family: "Courier Prime", monospace;
+.☠-m-colorSwatch_head {
+  padding: 1rem;
+}
+.☠-m-colorSwatch_swatch {
+  display: flex;
+  grid-column-start: 1;
+  grid-row-start: span 2;
 }
 
 .☠-o-footer {
   align-self: end;
   background-color: #0652dd;
   color: white;
+  filter: drop-shadow(4px 4px 8px #043185);
   grid-area: 6/2/7/5;
   padding: 0.75rem 1rem 0.5rem;
   text-align: right;

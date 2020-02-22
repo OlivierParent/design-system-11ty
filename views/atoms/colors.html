@@ -18,17 +18,21 @@ colors:
 <h1 class="☠-a-heading -☠-level-1">{{ eleventyNavigation.key }}</h1>
 {%- macro colorSwatches(color) %}
 {%- for swatch in [500, 100,200,300,400,500,600,700,800,900] %}
-{% set class = '-a-color' + (color | capitalize) + '-' + swatch %}
+{%- if loop.index == 2 %}
+<h3 class="☠-a-heading -☠-level-3">Variants</h3>
+{%- endif %}
+{%- set class = '-a-color' + (color | capitalize) + '-' + swatch %}
 <div class="☠-m-colorSwatch">
-    <div class="☠-m-colorSwatch_swatch {{ class }}" style="background-color: var(--color)"></div>
+    <div class="☠-m-colorSwatch_swatch {{ class }}" style="background-color: var(--color)">
+      <div class="☠-a-display -☠-level-2">{{ swatch }}</div>
+    </div>
     <div class="☠-m-colorSwatch_head">
-      <div class="☠-a-display -☠-level-4">{{ color }} {{ swatch }}</div>
+      <div class="☠-a-display -☠-level-3">{{ color | capitalize }} {{ swatch }}</div>
     </div>
     <div class="☠-m-colorSwatch_body">
       {% highlight 'css' %}
       class="{{ class }}"
       {% endhighlight%}
-      <p>{{ color.code }}</p>
     </div>
 </div>
 {%- endfor %}
