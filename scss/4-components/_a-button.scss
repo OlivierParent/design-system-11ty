@@ -1,26 +1,74 @@
+@use '../1-abstracts/variables' as v;
+@use 'sass:map';
+
 .a-button {
-  --color: #ddd;
+  --color: var(--a-colorNeutral-500);
   background-color: var(--color);
-  border: 1px solid var(--color);
   border-radius: .25em;
+  border: 2px solid var(--color);
+  cursor: pointer;
+  display: inline-block;
+  font-family: #{map.get(v.$fonts, 'body')};
   font-size: 1em;
+  line-height: 1.5;
   padding: .5em 1em;
- 
-  &-state {
-    &Active {
-
-    }
-    &Disabled {
-      
-    }
-    &Hover {
-
+  &:hover,
+  &.-stateHover {
+    --color: var(--a-colorNeutral-300);
+    &.-type {
+      &Primary {
+        --color: var(--a-colorPrimary-300);
+      }
+      &Secondary {
+        --color: var(--a-colorSecondary-300);
+      }
     }
   }
-  &-type {
+  &:active,
+  &.-stateActive {
+    --color: var(--a-colorNeutral-600);
+    &.-type {
+      &Primary {
+        --color: var(--a-colorPrimary-600);
+      }
+      &Secondary {
+        --color: var(--a-colorSecondary-600);
+      }
+    }
+  }
+  &:disabled,
+  &.-stateDisabled {
+    --color: var(--a-colorNeutral-100);
+    color: var(--a-colorNeutral-500);
+    &.-type {
+      &Primary {
+        --color: var(--a-colorPrimary-100);
+        color: var(--a-colorPrimary-500);
+      }
+      &Secondary {
+        --color: var(--a-colorSecondary-100);
+        color: var(--a-colorSecondary-500);
+      }
+    }
+  }
+  &.-type {
+    &Primary {
+      --color: var(--a-colorPrimary-500);
+    }
+    &Secondary {
+      --color: var(--a-colorSecondary-500);
+    }
+  }
+  &.-style {
     &Ghost {
       background-color: transparent;
       color: var(--color);
+      &:hover {
+        background-color: red;
+      }
+    }
+    &Square {
+      border-radius: none;
     }
   }
 }

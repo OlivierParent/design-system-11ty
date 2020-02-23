@@ -404,16 +404,62 @@ h6 {
 }
 
 .a-button {
-  --color: #ddd;
+  --color: var(--a-colorNeutral-500);
   background-color: var(--color);
-  border: 1px solid var(--color);
   border-radius: 0.25em;
+  border: 2px solid var(--color);
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roboto, sans-serif;
   font-size: 1em;
+  line-height: 1.5;
   padding: 0.5em 1em;
 }
-.a-button-typeGhost {
+.a-button:hover, .a-button.-stateHover {
+  --color: var(--a-colorNeutral-300);
+}
+.a-button:hover.-typePrimary, .a-button.-stateHover.-typePrimary {
+  --color: var(--a-colorPrimary-300);
+}
+.a-button:hover.-typeSecondary, .a-button.-stateHover.-typeSecondary {
+  --color: var(--a-colorSecondary-300);
+}
+.a-button:active, .a-button.-stateActive {
+  --color: var(--a-colorNeutral-600);
+}
+.a-button:active.-typePrimary, .a-button.-stateActive.-typePrimary {
+  --color: var(--a-colorPrimary-600);
+}
+.a-button:active.-typeSecondary, .a-button.-stateActive.-typeSecondary {
+  --color: var(--a-colorSecondary-600);
+}
+.a-button:disabled, .a-button.-stateDisabled {
+  --color: var(--a-colorNeutral-100);
+  color: var(--a-colorNeutral-500);
+}
+.a-button:disabled.-typePrimary, .a-button.-stateDisabled.-typePrimary {
+  --color: var(--a-colorPrimary-100);
+  color: var(--a-colorPrimary-500);
+}
+.a-button:disabled.-typeSecondary, .a-button.-stateDisabled.-typeSecondary {
+  --color: var(--a-colorSecondary-100);
+  color: var(--a-colorSecondary-500);
+}
+.a-button.-typePrimary {
+  --color: var(--a-colorPrimary-500);
+}
+.a-button.-typeSecondary {
+  --color: var(--a-colorSecondary-500);
+}
+.a-button.-styleGhost {
   background-color: transparent;
   color: var(--color);
+}
+.a-button.-styleGhost:hover {
+  background-color: red;
+}
+.a-button.-styleSquare {
+  border-radius: none;
 }
 
 .a-display {

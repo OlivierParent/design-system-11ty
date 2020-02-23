@@ -6,25 +6,94 @@ eleventyNavigation:
 layout: default
 tags: molecule
 ---
+{%- macro buttons(classes) %}
+<p>
+  <button class="a-button{% if classes %} {{ classes }}{% endif %}">normal state</button>
+  <button class="a-button{% if classes %} {{ classes }}{% endif %} -stateHover">hover state</button>
+  <button class="a-button{% if classes %} {{ classes }}{% endif %} -stateActive">active state</button>
+  <button class="a-button{% if classes %} {{ classes }}{% endif %}" disabled>disabled state</button>
+</p>
+<p>
+  <a class="a-button{% if classes %} {{ classes }}{% endif %}">normal state</a>
+  <a class="a-button{% if classes %} {{ classes }}{% endif %} -stateHover">hover state</a>
+  <a class="a-button{% if classes %} {{ classes }}{% endif %} -stateActive">active state</a>
+  <a class="a-button{% if classes %} {{ classes }}{% endif %} -stateDisabled">disabled state</a>
+</p>
+{%- endmacro %}
 <h1 class="☠-a-heading -☠-level-1">{{ eleventyNavigation.key }}</h1>
 
-<h2 class="☠-a-heading -☠-level-2">Default</h2>
+<h2 class="☠-a-heading -☠-level-2">Standard Style</h2>
 
-<button class="a-button">normal state</button>
-<button class="a-button -stateHover">hover state</button>
-<button class="a-button -stateActive">active state</button>
-<button class="a-button -stateDisabled">disabled state</button>
+<h3 class="☠-a-heading -☠-level-3">Default</h3>
 
-<h2 class="☠-a-heading -☠-level-2">Primary</h2>
+{%- set htmlCode %}
+{{ buttons() }}
+{%- endset %}
 
-<button class="a-button -typePrimary">normal state</button>
-<button class="a-button -typePrimary -stateHover">hover state</button>
-<button class="a-button -typePrimary -stateActive">active state</button>
-<button class="a-button -typePrimary -stateDisabled">disabled state</button>
+{{ htmlCode | safe }}
 
-<h2 class="☠-a-heading -☠-level-2">Secondary</h2>
+{%- highlight 'html' %}
+{{ htmlCode | safe }}
+{%- endhighlight %}
 
-<button class="a-button -typeSecondary">normal state</button>
-<button class="a-button -typeSecondary -stateHover">hover state</button>
-<button class="a-button -typeSecondary -stateActive">active state</button>
-<button class="a-button -typeSecondary -stateDisabled">disabled state</button>
+<h3 class="☠-a-heading -☠-level-3">Primary</h3>
+
+{%- set htmlCode %}
+{{ buttons('-typePrimary') }}
+{%- endset %}
+
+{{ htmlCode | safe }}
+
+{%- highlight 'html' %}
+{{ htmlCode | safe }}
+{%- endhighlight %}
+
+<h3 class="☠-a-heading -☠-level-3">Secondary</h3>
+
+{%- set htmlCode %}
+{{ buttons('-typeSecondary') }}
+{%- endset %}
+
+{{ htmlCode | safe }}
+
+{%- highlight 'html' %}
+{{ htmlCode | safe }}
+{%- endhighlight %}
+
+<h2 class="☠-a-heading -☠-level-2">Ghost Style</h2>
+
+<h3 class="☠-a-heading -☠-level-3">Default</h3>
+
+{%- set htmlCode %}
+{{ buttons('-styleGhost') }}
+{%- endset %}
+
+{{ htmlCode | safe }}
+
+{%- highlight 'html' %}
+{{ htmlCode | safe }}
+{%- endhighlight %}
+
+<h3 class="☠-a-heading -☠-level-3">Primary</h3>
+
+{%- set htmlCode %}
+{{ buttons('-styleGhost -typePrimary') }}
+{%- endset %}
+
+{{ htmlCode | safe }}
+
+{%- highlight 'html' %}
+{{ htmlCode | safe }}
+{%- endhighlight %}
+
+<h3 class="☠-a-heading -☠-level-3">Secondary</h3>
+
+{%- set htmlCode %}
+{{ buttons('-styleGhost -typeSecondary') }}
+{%- endset %}
+
+{{ htmlCode | safe }}
+
+{%- highlight 'html' %}
+{{ htmlCode | safe }}
+{%- endhighlight %}
