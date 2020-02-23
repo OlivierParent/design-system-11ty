@@ -3,12 +3,11 @@
 @use 'sass:map';
 
 .a-heading {
-  $sizes: 3rem, 2.5rem, 2rem, 1.5rem, 1.25rem, 1rem;
   font-family: #{map.get(v.$fonts, 'heading')};
   font-weight: 300;
-  @for $i from 1 through list.length($sizes) {
+  @for $i from 1 through list.length(v.$heading-sizes) {
     &.-level-#{$i} {
-      font-size: list.nth($sizes, $i);
+      font-size: list.nth(v.$heading-sizes, $i);
     }
   }
 }

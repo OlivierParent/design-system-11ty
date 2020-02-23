@@ -2,11 +2,15 @@
 @use 'sass:list';
 @use 'sass:map';
 
+$display-sizes: 4.25rem, 3.125rem, 2.5rem, 1.75rem;
+
 $fonts: (
   'heading': '"Courier Prime", monospace',
   'body'   : '"Courier Prime", monospace',
   'code'   : '"Courier Prime", monospace',
 );
+
+$heading-sizes: 2.5rem, 2rem, 1.75rem, 1.5rem, 1.25rem, 1rem;
 
 $palette: (
   // https://flatuicolors.com/palette/nl

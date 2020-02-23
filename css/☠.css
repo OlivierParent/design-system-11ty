@@ -80,12 +80,12 @@
 
 .☠-a-heading {
   font-family: "Courier Prime", monospace;
+  margin: 0.75em 0;
 }
 .☠-a-heading.-☠-level-1 {
   color: white;
   display: table;
-  height: 2rem;
-  padding: 0.25rem 0.5rem 0;
+  padding: 0.25em 0.5em 0;
   position: relative;
   text-transform: uppercase;
 }
@@ -107,6 +107,7 @@
 }
 .☠-a-heading.-☠-level-2 {
   border-bottom: 2px solid #0652dd;
+  padding: 0.25em 0 0;
   text-transform: uppercase;
 }
 .☠-a-heading.-☠-level-1 {
@@ -220,7 +221,7 @@
   display: grid;
   grid-template-areas: "sidebar sidebar sidebar main main" "sidebar sidebar sidebar main main" "sidebar sidebar sidebar main main" "sidebar sidebar sidebar main main";
   grid-template-rows: 1rem auto 1rem auto 1rem auto 1rem;
-  grid-template-columns: 1rem minmax(16rem, 1fr) 1rem 3fr 1rem;
+  grid-template-columns: 1rem minmax(21rem, 1fr) 1rem 3fr 1rem;
 }
 .☠-container::before {
   background-color: #1a1a1a;
