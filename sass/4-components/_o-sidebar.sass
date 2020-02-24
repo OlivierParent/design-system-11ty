@@ -4,12 +4,12 @@
 .☠-o-sidebar
   $padding: 1rem
   box-sizing: border-box
-  font-family: #{map.get(v.$fonts, 'heading')}
+  font-family: #{map.get(v.$font-families, 'heading')}
   grid-area: sidebar
   overflow-x: hidden
   padding: $padding
   a[aria-current]:not(span)
-    background-color: map.get(v.$swatches, 'primary-500')
+    background-color: map.get(v.$color-swatches, 'primary-500')
     color: white
   a
     color: white
@@ -23,7 +23,7 @@
     padding: .5em 0
     text-decoration: none
     &:hover:not(span)
-      color: map.get(v.$swatches, 'accent-500')
+      color: map.get(v.$color-swatches, 'accent-500')
   &_item
     &.-☠-level-0
       >.☠-o-sidebar_button
@@ -41,6 +41,6 @@
   &_title
     font-family: inherit
     font-size: 2rem
-    border-bottom: 2px solid map.get(v.$swatches, 'primary-500')
+    border-bottom: 2px solid map.get(v.$color-swatches, 'primary-500')
     text-indent: $padding
     text-transform: uppercase

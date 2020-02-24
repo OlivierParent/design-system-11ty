@@ -8,16 +8,16 @@ tags: molecule
 ---
 {%- macro buttons(classes) %}
 <p>
-  <button class="a-button{% if classes %} {{ classes }}{% endif %}">normal state</button>
-  <button class="a-button{% if classes %} {{ classes }}{% endif %} -stateHover">hover state</button>
-  <button class="a-button{% if classes %} {{ classes }}{% endif %} -stateActive">active state</button>
-  <button class="a-button{% if classes %} {{ classes }}{% endif %}" disabled>disabled state</button>
+  <button class="m-button{% if classes %} {{ classes }}{% endif %}">normal state</button>
+  <button class="m-button{% if classes %} {{ classes }}{% endif %} -stateHover">hover state</button>
+  <button class="m-button{% if classes %} {{ classes }}{% endif %} -stateActive">active state</button>
+  <button class="m-button{% if classes %} {{ classes }}{% endif %}" disabled>disabled state</button>
 </p>
 <p>
-  <a class="a-button{% if classes %} {{ classes }}{% endif %}">normal state</a>
-  <a class="a-button{% if classes %} {{ classes }}{% endif %} -stateHover">hover state</a>
-  <a class="a-button{% if classes %} {{ classes }}{% endif %} -stateActive">active state</a>
-  <a class="a-button{% if classes %} {{ classes }}{% endif %} -stateDisabled">disabled state</a>
+  <a class="m-button{% if classes %} {{ classes }}{% endif %}">normal state</a>
+  <a class="m-button{% if classes %} {{ classes }}{% endif %} -stateHover">hover state</a>
+  <a class="m-button{% if classes %} {{ classes }}{% endif %} -stateActive">active state</a>
+  <a class="m-button{% if classes %} {{ classes }}{% endif %} -stateDisabled">disabled state</a>
 </p>
 {%- endmacro %}
 <h1 class="☠-a-heading -☠-level-1">{{ eleventyNavigation.key }}</h1>
@@ -32,7 +32,7 @@ tags: molecule
 
 {{ htmlCode | safe }}
 
-{%- highlight 'html' %}
+{% highlight 'html' %}
 {{ htmlCode | safe }}
 {%- endhighlight %}
 

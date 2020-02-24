@@ -1,14 +1,14 @@
 @use '../1-abstracts/variables' as v;
 @use 'sass:map';
 
-.a-button {
+.m-button {
   --color: var(--a-colorNeutral-500);
   background-color: var(--color);
   border-radius: .25em;
   border: 2px solid var(--color);
   cursor: pointer;
   display: inline-block;
-  font-family: #{map.get(v.$fonts, 'body')};
+  font-family: #{map.get(v.$font-families, 'body')};
   font-size: 1em;
   line-height: 1.5;
   padding: .5em 1em;

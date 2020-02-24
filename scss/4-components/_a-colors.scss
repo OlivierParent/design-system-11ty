@@ -3,12 +3,12 @@
 @use 'sass:string';
 
 :root {
-  @each $name, $value in v.$swatches {
+  @each $name, $value in v.$color-swatches {
     $color-name: string.to-upper-case(string.slice($name, 0, 1)) + string.slice($name, 2);
     --a-color#{$color-name}: #{$value};
   }
 }
-@each $name, $value in v.$swatches {
+@each $name, $value in v.$color-swatches {
   $color-name: string.to-upper-case(string.slice($name, 0, 1)) + string.slice($name, 2);
   .-a-color#{$color-name} {
     --color: #{$value};

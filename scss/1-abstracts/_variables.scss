@@ -2,17 +2,7 @@
 @use 'sass:list';
 @use 'sass:map';
 
-$display-sizes: 4.25rem, 3.125rem, 2.5rem, 1.75rem;
-
-$fonts: (
-  'heading': 'Roboto, sans-serif',
-  'body'   : 'Roboto, sans-serif',
-  'code'   : 'monospace',
-);
-
-$heading-sizes: 3rem, 2.5rem, 2rem, 1.5rem, 1.25rem, 1rem;
-
-$palette: (
+$color-palette: (
   // https://flatuicolors.com/palette/nl
   rgb(255, 195, 18),  //  1
   rgb(247, 159, 31),  //  2
@@ -43,28 +33,38 @@ $palette: (
 );
 
 $color-scheme: (
-  'primary'  : list.nth($palette, 15),
-  'secondary': list.nth($palette,  1),
-  'accent'   : list.nth($palette,  5),
-  'neutral'  : list.nth($palette, 21),
-  'info'     : list.nth($palette, 10),
-  'warning'  : list.nth($palette,  2),
-  'danger'   : list.nth($palette,  4),
-  'success'  : list.nth($palette,  7),
+  'primary'  : list.nth($color-palette, 18),
+  'secondary': list.nth($color-palette,  1),
+  'accent'   : list.nth($color-palette,  5),
+  'neutral'  : list.nth($color-palette, 21),
+  'info'     : list.nth($color-palette, 10),
+  'warning'  : list.nth($color-palette,  2),
+  'danger'   : list.nth($color-palette,  4),
+  'success'  : list.nth($color-palette,  7),
 );
 
-$swatches: ();
+$color-swatches: ();
 @each $name, $value in $color-scheme {
   $colors: (
-    '#{$name}-100': #{color.scale($value, $lightness: 40%)},
-    '#{$name}-200': #{color.scale($value, $lightness: 35%)},
-    '#{$name}-300': #{color.scale($value, $lightness: 30%)},
-    '#{$name}-400': #{color.scale($value, $lightness: 20%)},
+    '#{$name}-100': #{color.scale($value, $lightness: 50%)},
+    '#{$name}-200': #{color.scale($value, $lightness: 36%)},
+    '#{$name}-300': #{color.scale($value, $lightness: 24%)},
+    '#{$name}-400': #{color.scale($value, $lightness: 12%)},
     '#{$name}-500': #{$value},
-    '#{$name}-600': #{color.scale($value, $lightness: -20%)},
-    '#{$name}-700': #{color.scale($value, $lightness: -30%)},
-    '#{$name}-800': #{color.scale($value, $lightness: -35%)},
-    '#{$name}-900': #{color.scale($value, $lightness: -40%)},
+    '#{$name}-600': #{color.scale($value, $lightness: -12%)},
+    '#{$name}-700': #{color.scale($value, $lightness: -24%)},
+    '#{$name}-800': #{color.scale($value, $lightness: -36%)},
+    '#{$name}-900': #{color.scale($value, $lightness: -50%)},
   );
-  $swatches: map.merge($swatches, $colors);
+  $color-swatches: map.merge($color-swatches, $colors);
 }
+
+$font-display-sizes: 4.25rem, 3.125rem, 2.5rem, 1.75rem;
+
+$font-heading-sizes: 3rem, 2.5rem, 2rem, 1.5rem, 1.25rem, 1rem;
+
+$font-families: (
+  'heading': 'Roboto, sans-serif',
+  'body'   : 'Roboto, sans-serif',
+  'code'   : 'monospace',
+);
