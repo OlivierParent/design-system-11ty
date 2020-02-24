@@ -1,13 +1,10 @@
+@use 'sass:list'
+
 // @see https://prismjs.com/
 $version: '1.19.0'
-// @import url('https://cdnjs.cloudflare.com/ajax/libs/prism/#{$version}/themes/prism-coy.min.css')
-// @import url('https://cdnjs.cloudflare.com/ajax/libs/prism/#{$version}/themes/prism-dark.min.css')
-// @import url('https://cdnjs.cloudflare.com/ajax/libs/prism/#{$version}/themes/prism-funky.min.css')
-// @import url('https://cdnjs.cloudflare.com/ajax/libs/prism/#{$version}/themes/prism-okaidia.min.css')
-// @import url('https://cdnjs.cloudflare.com/ajax/libs/prism/#{$version}/themes/prism-solarizedlight.min.css')
-@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/#{$version}/themes/prism-tomorrow.min.css')
-// @import url('https://cdnjs.cloudflare.com/ajax/libs/prism/#{$version}/themes/prism-twilight.min.css')
-// @import url('https://cdnjs.cloudflare.com/ajax/libs/prism/#{$version}/themes/prism.min.css')
+$themes: ('prism', 'prism-coy', 'prism-dark', 'prism-funky', 'prism-okaidia', 'prism-solarizedlight', 'prism-tomorrow', 'prism-twilight')
+@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/#{$version}/themes/#{list.nth($themes, 7)}.min.css')
 
-[class*="language-"] br
-  display: none
+[class*="language-"]
+  br
+    display: none
