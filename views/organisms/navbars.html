@@ -6,4 +6,61 @@ eleventyNavigation:
 layout: default
 tags: organism
 ---
+{%- macro navbar(class) %}
+<nav class="o-navbar{% if class %} {{ class }}{% endif %}">
+  <div class="o-navbar_bar">
+    <a class="o-navbar_brand m-button -typeNavbar" href="#">
+      <i class="fas fa-rocket"></i>
+    </a>
+    <button class="o-navbar_toggler m-button -typeNavbar">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+  <div class="o-navbar_nav">
+    <ul class="o-navbar_list">
+      {%- for label in ['home', 'documentation', 'examples', 'icons', 'themes', 'expo', 'blog'] %}
+      <li class="o-navbar_listItem">
+          <a class="m-button -typeNavbar" href="#">{{ label }}</a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</nav>
+{%- endmacro %}
 <h1 class="☠-a-heading -☠-level-1">{{ eleventyNavigation.key }}</h1>
+
+<h2 class="☠-a-heading -☠-level-2">Standard</h2>
+
+{%- set htmlCode %}
+{{ navbar() }}
+{%- endset %}
+
+{{ htmlCode | safe }}
+
+{% highlight 'html' %}
+{{ htmlCode | safe }}
+{%- endhighlight %}
+
+<h2 class="☠-a-heading -☠-level-2">Primary</h2>
+
+{%- set htmlCode %}
+{{ navbar('-a-colorPrimary') }}
+{%- endset %}
+
+{{ htmlCode | safe }}
+
+{% highlight 'html' %}
+{{ htmlCode | safe }}
+{%- endhighlight %}
+
+<h2 class="☠-a-heading -☠-level-2">Secondary</h2>
+
+{%- set htmlCode %}
+{{ navbar('-a-colorSecondary') }}
+{%- endset %}
+
+{{ htmlCode | safe }}
+
+{% highlight 'html' %}
+{{ htmlCode | safe }}
+{%- endhighlight %}

@@ -1,0 +1,37 @@
+@use '../1-abstracts/functions' as f;
+
+.o-navbar {
+  background: var(--color-500, f.get-swatch('neutral'));
+  display: flex;
+  justify-content: space-between;
+  padding: .5em 1em;
+  &_bar {
+
+  }
+  &_brand {
+    @media (max-width: 640px) {
+      display: none;
+    }
+  }
+  &_list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    &Item {
+      display: inline-block;
+    }
+  }
+  &_nav {
+    align-self: end;
+    @media (max-width: 640px) {
+      display: none;
+    }
+  }
+  &_toggler {
+    display: none;
+    @media (max-width: 640px) {
+      display: inline-block;
+    }
+  }
+}

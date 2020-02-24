@@ -1,3 +1,4 @@
+@use '../1-abstracts/functions' as f
 @use '../1-abstracts/variables' as v
 @use 'sass:map'
 
@@ -9,7 +10,7 @@
   overflow-x: hidden
   padding: $padding
   a[aria-current]:not(span)
-    background-color: map.get(v.$color-swatches, 'primary-500')
+    background-color: f.get-swatch('primary')
     color: white
   a
     color: white
@@ -23,7 +24,7 @@
     padding: .5em 0
     text-decoration: none
     &:hover:not(span)
-      color: map.get(v.$color-swatches, 'accent-500')
+      color: f.get-swatch('accent')
   &_item
     &.-☠-level-0
       >.☠-o-sidebar_button
@@ -41,6 +42,6 @@
   &_title
     font-family: inherit
     font-size: 2rem
-    border-bottom: 2px solid map.get(v.$color-swatches, 'primary-500')
+    border-bottom: 2px solid f.get-swatch('primary')
     text-indent: $padding
     text-transform: uppercase

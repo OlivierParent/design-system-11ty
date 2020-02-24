@@ -1,16 +1,30 @@
+@use '../1-abstracts/functions' as f;
 @use '../1-abstracts/variables' as v;
-@use 'sass:color';
 @use 'sass:string';
 
 :root {
-  @each $name, $value in v.$color-swatches {
-    $color-name: string.to-upper-case(string.slice($name, 0, 1)) + string.slice($name, 2);
-    --a-color#{$color-name}: #{$value};
+  @each $name, $swatches in v.$color-swatches {
+    $color-name: f.capitalize($name);
+    @each $swatch, $value in $swatches {
+      --a-color#{$color-name}-#{$swatch}: #{$value};
+    }
   }
 }
-@each $name, $value in v.$color-swatches {
-  $color-name: string.to-upper-case(string.slice($name, 0, 1)) + string.slice($name, 2);
+
+@each $name, $swatches in v.$color-swatches {
+  $color-name: f.capitalize($name);
   .-a-color#{$color-name} {
-    --color: #{$value};
+    @each $swatch, $value in $swatches {
+      --color-#{$swatch}: #{$value};
+    }
+  } 
+}
+
+@each $name, $swatches in v.$color-swatches {
+  $color-name: f.capitalize($name);
+  @each $swatch, $value in $swatches {
+    .-a-color#{$color-name}-#{$swatch} {
+      --color: #{$value};
+    }
   } 
 }

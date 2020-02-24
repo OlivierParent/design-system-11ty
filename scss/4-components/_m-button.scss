@@ -1,73 +1,59 @@
+@use '../1-abstracts/functions' as f;
 @use '../1-abstracts/variables' as v;
 @use 'sass:map';
 
 .m-button {
-  --color: var(--a-colorNeutral-500);
-  background-color: var(--color);
+  background-color: var(--color-500, f.get-swatch('neutral'));
   border-radius: .25em;
-  border: 2px solid var(--color);
+  border: 2px solid var(--color-500, f.get-swatch('neutral'));
+  color: inherit;
   cursor: pointer;
   display: inline-block;
   font-family: #{map.get(v.$font-families, 'body')};
   font-size: 1em;
   line-height: 1.5;
   padding: .5em 1em;
+  text-decoration: none;
   &:hover,
   &.-stateHover {
-    --color: var(--a-colorNeutral-300);
-    &.-type {
-      &Primary {
-        --color: var(--a-colorPrimary-300);
-      }
-      &Secondary {
-        --color: var(--a-colorSecondary-300);
-      }
-    }
+    background-color: var(--color-300, f.get-swatch('neutral', '300'));
+    border-color: var(--color-300, f.get-swatch('neutral', '300'));
+    color: var(--color-800, f.get-swatch('neutral', '800'));
   }
   &:active,
   &.-stateActive {
-    --color: var(--a-colorNeutral-600);
-    &.-type {
-      &Primary {
-        --color: var(--a-colorPrimary-600);
-      }
-      &Secondary {
-        --color: var(--a-colorSecondary-600);
-      }
-    }
+    background-color: var(--color-600, f.get-swatch('neutral', '600'));
+    border-color: var(--color-600, f.get-swatch('neutral', '600'));
+    color: black;
   }
   &:disabled,
   &.-stateDisabled {
-    --color: var(--a-colorNeutral-100);
-    color: var(--a-colorNeutral-500);
-    &.-type {
-      &Primary {
-        --color: var(--a-colorPrimary-100);
-        color: var(--a-colorPrimary-500);
-      }
-      &Secondary {
-        --color: var(--a-colorSecondary-100);
-        color: var(--a-colorSecondary-500);
-      }
-    }
-  }
-  &.-type {
-    &Primary {
-      --color: var(--a-colorPrimary-500);
-    }
-    &Secondary {
-      --color: var(--a-colorSecondary-500);
-    }
+    background-color: var(--color-100, f.get-swatch('neutral', '100'));
+    border-color: var(--color-100, f.get-swatch('neutral', '100'));
+    color: var(--color-400, f.get-swatch('neutral', '400'));
   }
   &.-style {
     &Ghost {
-      background-color: transparent;
-      color: var(--color);
-      &:hover {
-        background-color: red;
+      background-color: white;
+      color: var(--color-500, f.get-swatch('neutral'));
+      &:hover,
+      &.-stateHover {
+        background-color: var(--color-300, f.get-swatch('neutral', '300'));
+        color: var(--color-700, f.get-swatch('neutral', '700'));
+      }
+      &:active,
+      &.-stateActive {
+        background-color: var(--color-600, f.get-swatch('neutral', '600'));
+        color: black;
+      }
+      &:disabled,
+      &.-stateDisabled {
+        background-color: white;
+        border-color: var(--color-100, f.get-swatch('neutral', '100'));
+        color: var(--color-100, f.get-swatch('neutral', '100'));
       }
     }
-    &Square {
+    &Rectangular {
       border-radius: none;
     }
   }

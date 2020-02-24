@@ -1,3 +1,4 @@
+@use '../1-abstracts/functions' as f
 @use '../1-abstracts/variables' as v
 @use 'sass:map'
 
@@ -10,6 +11,6 @@
   font-family: #{map.get(v.$font-families, 'body')}
 
 .☠-a
-  color: map.get(v.$color-swatches, 'primary-500')
+  color: f.get-swatch('primary')
   &:hover
-    color: map.get(v.$color-swatches, 'accent-500')
+    color: f.get-swatch('accent')

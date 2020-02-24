@@ -39,7 +39,7 @@ tags: molecule
 <h3 class="☠-a-heading -☠-level-3">Primary</h3>
 
 {%- set htmlCode %}
-{{ buttons('-typePrimary') }}
+{{ buttons('-a-colorPrimary') }}
 {%- endset %}
 
 {{ htmlCode | safe }}
@@ -51,7 +51,7 @@ tags: molecule
 <h3 class="☠-a-heading -☠-level-3">Secondary</h3>
 
 {%- set htmlCode %}
-{{ buttons('-typeSecondary') }}
+{{ buttons('-a-colorSecondary') }}
 {%- endset %}
 
 {{ htmlCode | safe }}
@@ -65,7 +65,7 @@ tags: molecule
 <h3 class="☠-a-heading -☠-level-3">Default</h3>
 
 {%- set htmlCode %}
-{{ buttons('-styleGhost') }}
+{{ buttons('-styleGhost -a-colorNeutral') }}
 {%- endset %}
 
 {{ htmlCode | safe }}
@@ -77,7 +77,7 @@ tags: molecule
 <h3 class="☠-a-heading -☠-level-3">Primary</h3>
 
 {%- set htmlCode %}
-{{ buttons('-styleGhost -typePrimary') }}
+{{ buttons('-styleGhost -a-colorPrimary') }}
 {%- endset %}
 
 {{ htmlCode | safe }}
@@ -89,7 +89,7 @@ tags: molecule
 <h3 class="☠-a-heading -☠-level-3">Secondary</h3>
 
 {%- set htmlCode %}
-{{ buttons('-styleGhost -typeSecondary') }}
+{{ buttons('-styleGhost -a-colorSecondary') }}
 {%- endset %}
 
 {{ htmlCode | safe }}

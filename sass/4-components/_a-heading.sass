@@ -1,3 +1,4 @@
+@use '../1-abstracts/functions' as f
 @use '../1-abstracts/variables' as v
 @use 'sass:list'
 @use 'sass:map'
@@ -14,10 +15,10 @@
     &::after
       content: '.'
     &::before
-      filter: drop-shadow(4px 4px 8px map.get(v.$color-swatches, 'primary-900'))
+      filter: drop-shadow(4px 4px 8px f.get-swatch('primary', '900'))
       background: transparent
       bottom: 0
-      box-shadow: inset 0 0 0 999em map.get(v.$color-swatches, 'primary-500')
+      box-shadow: inset 0 0 0 999em f.get-swatch('primary')
       content: ''
       left: 0
       position: absolute
@@ -26,7 +27,7 @@
       transform: rotate(-1deg)
       z-index: -1
   &.-☠-level-2
-    border-bottom: 2px solid map.get(v.$color-swatches, 'primary-500')
+    border-bottom: 2px solid f.get-swatch('primary')
     padding: .25em 0 0
     text-transform: uppercase
   @for $i from 1 through list.length(v.$font-heading-sizes)
@@ -35,6 +36,6 @@
       @if $i > 2
         @extend %underline
   @at-root %underline
-    text-decoration-color: map.get(v.$color-swatches, 'primary-500')
+    text-decoration-color: f.get-swatch('primary')
     text-decoration-line: underline
     text-decoration-style: solid

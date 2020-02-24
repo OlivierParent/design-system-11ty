@@ -2,10 +2,6 @@
 @import url("https://fonts.googleapis.com/css?family=Courier+Prime&display=block");
 @import url("https://fonts.googleapis.com/css?family=Gochi+Hand&display=block");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism-tomorrow.min.css");
-[class*=language-] br {
-  display: none;
-}
-
 .☠-body {
   margin: 0;
 }
