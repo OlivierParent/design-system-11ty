@@ -13,15 +13,15 @@ tags: atom
 <p class="☠-p">Unstyled paragraphs &ndash; as shown below &ndash; should <strong>not</strong> be used.</p>
 
 {%- set htmlCode %}
-{%- for i in range(1, 7) %}
+  {%- for i in range(1, 7) %}
 <h{{i}}>Standard heading, level {{ i }}</h{{i}}>
-{%- endfor%}
+  {%- endfor %}
 {%- endset %}
 
 {{ htmlCode | safe }}
 
 {%- highlight 'html' %}
-{{ htmlCode | safe }}
+  {{ htmlCode | safe }}
 {%- endhighlight %}
 
 <h2 class="☠-a-heading -☠-level-2">Custom Headings</h2>
@@ -29,9 +29,9 @@ tags: atom
 <h3 class="☠-a-heading -☠-level-3">Normal</h3>
 
 {%- set htmlCode %}
-{%- for i in range(1, 7) %}
+  {%- for i in range(1, 7) %}
 <h{{i}} class="a-heading">Custom heading, level {{ i }}</h{{i}}>
-{%- endfor%}
+  {%- endfor %}
 {%- endset %}
 
 {{ htmlCode | safe }}
@@ -45,9 +45,9 @@ tags: atom
 <p class="☠-p">The default heading size can be overridden.</p>
 
 {%- set htmlCode %}
-{%- for i in range(1, 7) %}
+  {%- for i in range(1, 7) %}
 <h{{7-i}} class="a-heading -level-{{ i }}">Custom heading, level {{ i }}</h{{7-i}}>
-{%- endfor%}
+  {%- endfor %}
 {%- endset %}
 
 {{ htmlCode | safe }}
@@ -59,9 +59,9 @@ tags: atom
 <h2 class="☠-a-heading -☠-level-2">Display Headings</h2>
 
 {%- set htmlCode %}
-{%- for i in range(1, 5) %}
+  {%- for i in range(1, 5) %}
 <h1 class="a-display -level-{{ i }}">Display heading, level {{ i }}</h1>
-{%- endfor%}
+  {%- endfor %}
 {%- endset %}
 
 {{ htmlCode | safe }}
